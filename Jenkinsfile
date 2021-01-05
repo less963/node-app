@@ -10,10 +10,12 @@ pipeline {
             }
         }
         stage('DockerHub Push'){
-            withCredentials([string(credentialsId: 'less963', variable: 'dockerHubPwd')]) {
+           steps{
+                withCredentials([string(credentialsId: 'less963', variable: 'dockerHubPwd')]) {
             sh "docker login -u less963 -p ${dockerHubPwd}"
             sh "docker push less963/nodeapp:${DOCKER_TAG}"
             }
+           }
         }
     }
 }
