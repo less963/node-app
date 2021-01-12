@@ -1,0 +1,22 @@
+pipeline {
+
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'We are doing some JJTech of Jenkins on this application...'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'We are Testing the application...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'We are Deploying the application...'
+            }
+        }
+    }
+}
